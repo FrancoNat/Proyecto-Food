@@ -1,11 +1,7 @@
 const { Router } = require('express');
 const { Recipe, Diet } = require('../db');
-const axios = require('axios');
-//const { API_KEY } = procces.env;
 const router = Router();
 const model = require('../controllers/controllerRecipe')
-const { recipes } = require('../controllers/RecetasApi')
-
 // GET | /recipes/name?="..."
 // Esta ruta debe obtener todas aquellas recetas que coincidan con el nombre recibido por query. (No es necesario que sea una coincidencia exacta).
 // Debe poder buscarla independientemente de mayúsculas o minúsculas.
