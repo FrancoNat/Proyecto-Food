@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAll } from "../../redux/actions";
-// import btnNew from '../../components/Buttons/NewRec';
+import SearchBar from "../../components/SearchBar/SearchBar"
+import Filters from "../../components/Filters/Filters";
 import { Link } from "react-router-dom";
-
+import Cards from "../../components/Cards/Cards";
+import Pagination from '../../components/Pagination/Pagnation'
 
 const Home = () => {
   const PAGINATOR_SIZE = 9;
@@ -43,10 +45,10 @@ const Home = () => {
              </Link>
             </header>
             <main>
-             {/* <SearchBar />
+             <SearchBar />
              <Filters />
              <Cards recipes={paginatedRecipes()}/>
-             {Array.isArray(allRecipes) && allRecipes.length !== 0 && <Pagination pageCount={pageCount()} currentPage={currentPage}/>} */}
+             {Array.isArray(allRecipes) && allRecipes.length !== 0 && <Pagination pageCount={pageCount()} currentPage={currentPage}/>}
             </main>
            </div>
         </div>

@@ -7,8 +7,8 @@ const NavBar = () =>{
         <div className="mainContainer">
             <Link to="/">Landing Page</Link>
             <Link to="/home">Home</Link>
-            <Link to="/detail">Detail</Link>
-            <Link to="/create">Form</Link>
+            {/* <Link to="/about">Form</Link> */}
+            {/* <Link to="/create">Form</Link> */}
         </div>
 
     );
