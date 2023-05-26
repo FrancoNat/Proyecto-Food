@@ -1,0 +1,21 @@
+.containerHome{
+    background-color: orange;
+    padding-top: 1rem;
+    min-height: 100vh;
+}
+
+.secondContainer{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.header{
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 1.2rem;
+}

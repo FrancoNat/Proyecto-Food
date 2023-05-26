@@ -4,6 +4,7 @@ import { getDiets, getDishTypes } from "../../redux/actions";
 import { URL_BACKEND } from "../../redux/actions/type";
 import DetailCard from "../../components/DetailCard/DetailCard";
 import Header from "../../components/Header/Header";
+import "../Form/Form.css";
 //Traemos los inputs del formulario 
 import { BasicInfo, CheckboxDishType, CheckboxDiets, Ingredients, Instructions } from "../../components/Form";
 
@@ -114,12 +115,12 @@ const Form = () => {
     record.registered
       ? <DetailCard recipe={record.response}/>
       :
-    <div>
+    <div className="formContainer">
       <Header />
       <form>
         <div>
           {/* error.register es cargado con error  generado por el backend, si lo tiene */}
-          {error.register && <h2 className={`errorMessage`}>{error.register}</h2>}
+          {error.register && <h2 className="errorMessage errorMessage" >{error.register}</h2>}
 
           <BasicInfo state={input} error={error} handleChange={handlerInputChange} />
           <CheckboxDishType dishTypes={allDishTypes} handleChange={handlerDishType} isChecked={dishTypeIsChecked}/>
@@ -127,8 +128,8 @@ const Form = () => {
           <Ingredients state={input} error={error} handleChange={handlerInputChange} addIngredient={addIngredient}/>
           <Instructions state={input} error={error} handleChange={handlerInputChange} addInstruction={addInstruction}/>
         </div>
-        <div>
-        <button disabled={disableButton()} onClick={handlerSubmit}>Add recipe</button>
+        <div className="btnContainer">
+        <button className="button" disabled={disableButton()} onClick={handlerSubmit}>New Recipe</button>
         </div>
       </form>
     </div>

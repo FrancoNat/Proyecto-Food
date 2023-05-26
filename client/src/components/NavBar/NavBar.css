@@ -1,8 +1,13 @@
-.mainContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-radius: 15px;
-    border: 1px, solid black;
+.LandingContainer{
+    text-align: initial;
+    margin: 1rem auto;
+    height: 20px;
+    padding: 5px;
+}
 
+.AboutContainer{
+    text-align: right;
+    margin: -3rem auto;
+    height: 20px;
+    padding: 1px; 
 }

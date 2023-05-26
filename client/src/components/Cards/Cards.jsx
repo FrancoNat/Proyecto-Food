@@ -1,12 +1,12 @@
 import Card from "../Card/Card";
-import style from '../Cards/Cards.jsx'
+import '../Cards/Cards.css'
 
 
 
 const Cards = ({recipes}) => {
   
   return (
-        <div className={style.cards}>
+        <div className="container">
         {
           recipes.map(recipe  => <Card 
           key={recipe.id} 

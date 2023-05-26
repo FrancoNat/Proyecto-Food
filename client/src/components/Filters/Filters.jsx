@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux'
 import { getDiets,filterByDiet,filterByCreator,orderByTitle,orderByHealthy } from '../../redux/actions'
-import style from '../Filters/Filters.css';
+import "./Filters.css";
 
 export default function Filters() {
     const dispatch = useDispatch();
@@ -17,30 +17,30 @@ export default function Filters() {
     const handlerOrderByHealthy = (orientation) =>{ dispatch(orderByHealthy(orientation)) }
   
     return(
-      <div className={style.filter}>
+      <div className="filter">
         {/* filtrar por dietas */}
-        <select onChange={(e) => handlerFilterByDiet(e.target.value)} className={style.filterSelect}>
+        <select onChange={(e) => handlerFilterByDiet(e.target.value)} className="filterSelect">
           <option value="none">Filter</option>
           <option value="none">All diets</option>
           {Array.isArray(allDiets) && allDiets.map(diet => <option value={diet.name} key={diet.id}>{diet.name}</option>)}
         </select>
         {/* filtrar por creado por el usuario o existente */}
         {/* Esto hace referencia al campo created de BD true es de BD y false es de Api externa */}
-        <select onChange={(e) => handlerFilterByCreator(e.target.value)} className={style.filterSelect}>
+        <select onChange={(e) => handlerFilterByCreator(e.target.value)} className="filterSelect">
           <option value="none">Filter</option>
           <option value="none">All</option>
           <option value="true">Created by users</option>
           <option value="false">Pre-existing</option>
         </select>
         {/* Ordenar por titulo ascendente o descendente*/}
-        <select onChange={(e) => handlerOrderByTitle(e.target.value)} className={`${style.filterSelect} ${style.selectOrder}`}>
+        <select onChange={(e) => handlerOrderByTitle(e.target.value)} className="filterSelect">
           <option value="none">Order</option>
           <option value="none">None</option>
           <option value="up">Title A-Z</option>
           <option value="down">Title Z-A</option>
         </select>
         {/* Ordernar por health score ascendente o descendente*/}
-        <select onChange={(e) => handlerOrderByHealthy(e.target.value)} className={`${style.filterSelect} ${style.selectOrder}`}>
+        <select onChange={(e) => handlerOrderByHealthy(e.target.value)} className="filterSelect">
           <option value="none">Order</option>
           <option value="none">None</option>
           <option value="down">More healthy</option>

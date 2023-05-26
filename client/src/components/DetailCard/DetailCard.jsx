@@ -1,27 +1,26 @@
 import Header from '../Header/Header'
-import style from '../DetailCard/DetailCard.css';
+import '../DetailCard/DetailCard.css';
 import Error404 from '../Errors/Error404'
 
 
 
 
-
-export default function DetailCard({ recipe }) {
+const DetailCard = ({ recipe }) => {
 
     if (recipe.hasOwnProperty('error')) {
       return <div><Header /> <Error404 /></div>
     }
     return (
-      <article className={style.detailCard}>
+      <article className="detailCard">
         <Header />
-        {recipe.hasOwnProperty('message') && <h3 className={style.successMessage}>{recipe.message}</h3>}
+        {recipe.hasOwnProperty('message') && <h3 className="successMessage">{recipe.message}</h3>}
         
-        <div className={style.card}>
-          <section className={style.mainContent}>
-            <figure className={style.containerImage}>
-              <img src={recipe.image} alt={recipe.title} className={style.recipeImage} />
+        <div className="card">
+          <section className="mainContent">
+            <figure className="containerImage">
+              <img src={recipe.image} alt={recipe.title} className="recipeImage" />
             </figure>
-            <div className={style.basicDetails}>
+            <div className="basicDetails">
               <h1>{recipe.title}</h1>
               <h3>Dish type:</h3>
               <p>{recipe.dishTypes.map((dishType, index) => (
@@ -35,8 +34,8 @@ export default function DetailCard({ recipe }) {
                   ? <span key={index}>{diet} - </span>
                   : <span key={index}>{diet}</span>
               ))}</p>
-              <div className={style.scores}>
-                <span className={style.scoreHeart}>
+              <div className="scores">
+                <span className="scoreHeart">
                 
                   {recipe.healthScore}
                   </span>
@@ -47,9 +46,9 @@ export default function DetailCard({ recipe }) {
               </div>
             </div>
           </section>
-          <section className={style.secondaryContent}>
+          <section className="secondaryContent">
             <h2>Summary:</h2>
-            <p className={style.summary} dangerouslySetInnerHTML={{ __html: recipe.summary }}></p>
+            <p className="summary" dangerouslySetInnerHTML={{ __html: recipe.summary }}></p>
             {/* <p className={style.summary}>{recipe.summary}</p> */}
             <h2>Ingredients:</h2>
             <ul>
@@ -63,5 +62,7 @@ export default function DetailCard({ recipe }) {
         </div>
       </article>
   
-    )
-  }
+    );
+  };
+
+  export default DetailCard;

@@ -1,6 +1,7 @@
 import style from "./Landing.module.css";
-import { Link } from 'react-router-dom'
-import video from "../../Assets/Video.mp4"
+import BtnStart from "../../components/Buttons/BtnStart";
+// import imgLand from "../../Assets/cooking.png"
+
 
 
 
@@ -8,15 +9,17 @@ import video from "../../Assets/Video.mp4"
 const Landing = () => {
     
     return(
-        <main className={style.container}>
-           <video className={style.video} autoPlay loop muted>
-              <source src={video} type='video/mp4'></source> 
-           </video>  
-          <Link to="/home">
-            <button>Ir a Home</button>
-          </Link>
-        
-        </main>
+      <main className={style.container}>
+      <div className={style.card}>
+        {/* <img src={imgLand} alt="fondo de landing" className={style.image} /> */}
+        <h1 className={style.cardTitle}>Wellcome!</h1>
+        <div className={style.cardContent}>
+          On this site, you can find the best <span>recipes. </span>
+          In addition to the necessary <span>ingredients </span>and <span>instructions </span>to prepare them.
+        </div>
+        <BtnStart />
+        </div>
+      </main>
     );
 };
 

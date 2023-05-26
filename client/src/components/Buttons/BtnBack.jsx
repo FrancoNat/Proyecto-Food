@@ -1,9 +1,15 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './Btns.css'
 
-const BtnBack = () =>{
-    <Link to='/home'>
-        <button>Back home</button>
+
+const BtnBack = () => {
+   return(
+   
+   <Link to='/home'>
+        <button className='btnRoundBack'>Home</button>
     </Link>
+   )
 };
 
 export default BtnBack;

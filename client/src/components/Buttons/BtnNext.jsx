@@ -1,6 +1,8 @@
+import './Btns.css';
+
 const BtnNext = ({handlerNext}) => {
    return(
-    <button onClick={handlerNext}>Next</button>
+    <button className="btnRoundBack" onClick={handlerNext}>Next</button>
    )
 }
 

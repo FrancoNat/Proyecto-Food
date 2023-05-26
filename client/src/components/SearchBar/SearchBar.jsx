@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { seacrhRecipe, clearErrorStatus } from '../../redux/actions';
-import style from '../SearchBar/SearchBar.css'
+import  '../SearchBar/SearchBar.css'
 
 export default function SearchBar() {
     const errorStatus = useSelector(store => store.errorStatus);
@@ -44,13 +44,13 @@ export default function SearchBar() {
     }
 
     return(
-        <div className={style.searchBar}>
+        <div className="searchBar">
           <form onSubmit={handlerSubmit}>
-            <input type="text" value={input} onChange={handlerChange} placeholder='Search by name' className={style.searchBarInput}/>
+            <input type="text" value={input} onChange={handlerChange} placeholder='Search by name' className="searchBarInput"/>
           </form>
           {loading && <p>{loading}</p>}
           {error && <p className='errorMessage'>{error}</p>}
-          {errorStatus && <div className={`errorMessage ${style.errorStatus}`}><p>{errorStatus}</p><p onClick={handlerErrorStatus}>X</p></div>}
+          {errorStatus && <div className={`errorMessage errorStatus`}><p>{errorStatus}</p><p onClick={handlerErrorStatus}>X</p></div>}
         </div>
     )
 

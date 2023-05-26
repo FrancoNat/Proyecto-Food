@@ -1,0 +1,35 @@
+.pagination{
+    width: 90%;
+    margin: 0 auto;
+    color: #021E40;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .pagination :is(ul){
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .pagination :is(li):hover{
+    cursor: pointer;
+    color: #055cc5;
+  }
+  
+  .pageSelected{
+    background-color: #FF795B;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    text-align: center;
+    color: #FBFBFB;
+  }

@@ -1,16 +1,17 @@
-import { Link } from "react-router-dom"
+import BtnAbout from "../Buttons/BtnAbout";
+import BtnLanding from "../Buttons/BtnLanding";
 import "../NavBar/NavBar.css"
 
 
 const NavBar = () =>{
     return(
-        <div className="mainContainer">
-            <Link to="/">Landing Page</Link>
-            <Link to="/home">Home</Link>
-            {/* <Link to="/about">Form</Link> */}
-            {/* <Link to="/create">Form</Link> */}
+        <div className="LandingContainer">
+            <BtnLanding />
+          <div className="AboutContainer" >
+            <BtnAbout />
+          </div>
         </div>
-
+        
     );
 };
 

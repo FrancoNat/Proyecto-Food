@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAll } from "../../redux/actions";
 import SearchBar from "../../components/SearchBar/SearchBar"
 import Filters from "../../components/Filters/Filters";
-import { Link } from "react-router-dom";
 import Cards from "../../components/Cards/Cards";
 import Pagination from '../../components/Pagination/Pagnation'
+import  '../Home/Home.css'
+import BtnSeeMore from "../../components/Buttons/BtnNew";
 
 const Home = () => {
   const PAGINATOR_SIZE = 9;
@@ -37,12 +38,10 @@ const Home = () => {
     }
 
     return(
-        <div>
-           <div>
-            <header>
-             <Link to="/create">
-               <button>Nueva Receta</button>
-             </Link>
+        <div className="containerHome">
+           <div className="secondContainer">
+            <header className="header">
+            <BtnSeeMore />
             </header>
             <main>
              <SearchBar />

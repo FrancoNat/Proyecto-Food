@@ -1,6 +1,6 @@
 import {useDispatch} from 'react-redux'
 import { changePage } from '../../redux/actions';
-import style from '../Pagination/Pagination.css'
+import '../Pagination/Pagination.css'
 import BtnNext from '../Buttons/BtnNext';
 
 export default function Pagination({pageCount, currentPage}) {
@@ -20,12 +20,12 @@ export default function Pagination({pageCount, currentPage}) {
   }
 
   return(
-    <div className={style.pagination}>
+    <div className="pagination">
       <section>
         <ul>
           {pages.map(page => (
             page === currentPage 
-              ? <li key={page} onClick={() => handlerPage(page)} className={style.pageSelected}>{page}</li>
+              ? <li key={page} onClick={() => handlerPage(page)} className="pageSelected">{page}</li>
               : <li key={page} onClick={() => handlerPage(page)}>{page}</li>
             ))}
         </ul>

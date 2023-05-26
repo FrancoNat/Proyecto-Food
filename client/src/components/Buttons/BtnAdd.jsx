@@ -1,6 +1,8 @@
+import './Btns.css'
+
 const BtnAdd = ({add}) =>{
     return (
-        <button onClick ={add}>Add</button>
+        <button className="btnRoundBack" onClick ={add}>Add</button>
     );
 };
 
