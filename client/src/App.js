@@ -1,26 +1,28 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import { Detail, Form, Home, Landing, About } from './views';
-import { Route, useLocation } from 'react-router-dom';
+import { Detail, Form, Home, Landing, } from './views/index';
+import { BrowserRouter as Rourter, Route, Routes } from 'react-router-dom';
 
 
 
 function App() {
   
-  const location = useLocation();
+  
 
   return (
     <div className="App">
-      {location.pathname === "/home" && <NavBar/>}
-       <Route exact path= "/" render={() => <Landing/>} />
-       <Route exact path="/detail/:id" render={() => <Detail/>} />
-       <Route exact path="/create" render={() => <Form/>} />  
-       <Route path="/home" render={() => <Home/>} />
-       <Route path="/about" render={() => <About/>} />
+      <Routes>
+       <Route exact path= "/" element={<Landing />} />
+       <Route exact path="/detail/:id" element={<Detail />} />
+       <Route exact path="/create" element={<Form />} />  
+       <Route path="/home" element={<Home />} />
+      </Routes>
     </div>
   );
   
 }
             
 export default App;
+     
+      
+      
 
